@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity"
+    android:background="@drawable/welcome_page_gradient_background">
+
+    <TextView
+        android:id="@+id/main_activity_message_text_view1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop"
+       android:layout_centerInParent="true"
+        android:layout_marginRight="26dp"
+        android:layout_marginLeft="26dp"
+        android:text="@string/main_acitvity_message1"
+        android:textColor="@android:color/white"
+        android:textSize="26sp" />
+    <TextView
+        android:id="@+id/main_activity_message_text_view2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="26dp"
+        android:layout_marginLeft="26dp"
+        android:text="@string/main_activity_message2"
+        android:textColor="@android:color/white"
+        android:layout_below="@+id/main_activity_message_text_view1"
+        android:textSize="26sp" />
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical"
+        android:scaleType="centerCrop"
+        android:layout_centerInParent="true"
+        android:layout_marginRight="26dp"
+        android:layout_marginLeft="26dp"
+        android:text="@string/main_activity_message3"
+        android:layout_below="@+id/main_activity_message_text_view2"
+        android:textColor="@android:color/white"
+        android:textSize="26sp" />
+
+</RelativeLayout>
