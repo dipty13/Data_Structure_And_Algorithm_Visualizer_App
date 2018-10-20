@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
+    <!--<color name="colorPrimary">#53C7F0</color>
+    <color name="colorPrimaryDark">#1D97C1</color>-->
+    <color name="colorPrimary">#D291BC</color>
+    <color name="colorPrimaryDark">#D291BC</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorGradientEnd">#cc95c0</color>
+    <color name="colorGradientEnd">#1a2980</color>
     <color name="colorGradientCenter">#dbd4b4</color>
-    <color name="colorGradientStart">#7aa1d2</color>
+    <color name="colorGradientStart">#26d0ce</color>
 </resources>

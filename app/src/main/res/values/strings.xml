@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Data Structure and Algorithm Visualizer</string>
-    <string name="main_acitvity_message1">Learn Algorithms  through</string>
+    <string name="app_name">AlgorithmVisualizer</string>
+    <string name="main_activity_message1">Learn Algorithms  through</string>
     <string name="main_activity_message3">of Code!</string>
     <string name="main_activity_message2">Visualizing Each Line</string>
+    <string name="algorithm_visualizer">Algorithm Visualizer</string>
 </resources>
