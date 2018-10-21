@@ -8,4 +8,5 @@
     <color name="colorGradientEnd">#1a2980</color>
     <color name="colorGradientCenter">#dbd4b4</color>
     <color name="colorGradientStart">#26d0ce</color>
+    <color name="colorLightBlue">#a6e1e0</color>
 </resources>
