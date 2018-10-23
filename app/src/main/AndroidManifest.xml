@@ -19,8 +19,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Home"
+        <activity
+            android:name=".Home"
             android:screenOrientation="portrait"
+            android:theme="@style/HomeTheme" />
+        <activity android:name=".LinkedListVisualizer"
+            android:screenOrientation="landscape"
             android:theme="@style/HomeTheme"></activity>
     </application>
 

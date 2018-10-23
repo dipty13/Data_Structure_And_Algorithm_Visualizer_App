@@ -9,6 +9,7 @@ import android.view.Window;
 import android.view.WindowManager;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
 
 public class Home extends AppCompatActivity {
@@ -16,6 +17,7 @@ public class Home extends AppCompatActivity {
     private RecyclerView.Adapter mAdapter;
 
     private List<HomeList> mListItems;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

@@ -4,4 +4,5 @@
     <string name="main_activity_message3">of Code!</string>
     <string name="main_activity_message2">Visualizing Each Line</string>
     <string name="algorithm_visualizer">Algorithm Visualizer</string>
+    <string name="linked_list">Linked List</string>
 </resources>
