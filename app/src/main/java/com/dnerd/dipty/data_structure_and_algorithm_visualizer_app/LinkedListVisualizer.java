@@ -26,9 +26,11 @@ public class LinkedListVisualizer extends AppCompatActivity {
             R.drawable.code10,
             R.drawable.code11,
     };
-    private int INDEX = 0;
+    private int index = -1;
     private int flag = 0;
-    private FloatingActionButton mPlay;
+    private Button mPlayButton;
+    private Button mNextButton;
+    private Button mBackButton;
     private LinearLayout mCodeLayout;
     private LinearLayout mVisualizerLayout;
 
@@ -45,31 +47,50 @@ public class LinkedListVisualizer extends AppCompatActivity {
 
         setContentView(R.layout.activity_linked_list_visualizer);
 
-        mPlay = findViewById(R.id.linked_list_play_floating_button);
+        mPlayButton = findViewById(R.id.linked_list_play_button);
+        mNextButton = findViewById(R.id.linked_list_next_button);
+        mBackButton = findViewById(R.id.linked_list_back_button);
         mCodeLayout = findViewById(R.id.linked_list_code_linear_layout);
         mVisualizerLayout = findViewById(R.id.linked_list_visualizer_linear_layout);
 
+        if(index <= 0)
+        {
+            mBackButton.setEnabled(false);
+        }
+        if(index >= 10)
+        {
+            mBackButton.setEnabled(false);
+        }
         
-            mPlay.setOnClickListener(new View.OnClickListener() {
+            mNextButton.setOnClickListener(new View.OnClickListener() {
                 @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
                 @Override
                 public void onClick(View view) {
-                    if(flag == 0) {
-                        mPlay.setBackground(getResources().getDrawable(R.drawable.ic_pause));
-                        int i;
-                        for( i = INDEX; i < mCodePic.length; i++) {
-
-                            mCodeLayout.setBackground(getResources().getDrawable(mCodePic[INDEX]));
-
-                        }
-                        INDEX = i;
-                        flag = 1;
+                    mBackButton.setEnabled(true);
+                    index++;
+                    if(index <= 10) {
+                        mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
                     }else{
-                        mPlay.setBackground(getResources().getDrawable(R.drawable.ic_play));
-                        flag = 0;
+                        mNextButton.setEnabled(false);
+                       // mBackButton.setEnabled(true);
                     }
+
                 }
             });
+        mBackButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(View view) {
+                mNextButton.setEnabled(true);
+                index--;
+                if(index >= 0) {
+                    mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
+                }else {
+                    mBackButton.setEnabled(false);
+
+                }
+            }
+        });
 
     }
 }

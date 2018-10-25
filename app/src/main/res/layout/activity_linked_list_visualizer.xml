@@ -54,31 +54,36 @@
                 android:layout_margin="16dp">
 
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/linked_list_back_floating_button"
+                <Button
+                    android:id="@+id/linked_list_back_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Back"
                     android:src="@drawable/ic_back"
-                    android:clickable="false"/>
+                    android:clickable="false"
+                    android:text="Back"
+                    android:enabled="false"/>
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/linked_list_play_floating_button"
+                <Button
+                    android:id="@+id/linked_list_play_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/linked_list_back_floating_button"
                     android:contentDescription="play"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:src="@drawable/ic_play"/>
+                    android:src="@drawable/play_button_background"
+                    android:text="Play"
+                    android:visibility="gone"/>
 
-                <android.support.design.widget.FloatingActionButton
-                    android:id="@+id/linked_list_forward_floating_button"
+                <Button
+                    android:id="@+id/linked_list_next_button"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/linked_list_play_floating_button"
                     android:contentDescription="Forward"
-                    android:src="@drawable/ic_forward" />
+                    android:src="@drawable/ic_forward"
+                    android:text="Next"/>
             </LinearLayout>
 
         </LinearLayout>
