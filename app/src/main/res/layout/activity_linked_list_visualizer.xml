@@ -59,10 +59,11 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:contentDescription="Back"
-                    android:src="@drawable/ic_back"
                     android:clickable="false"
-                    android:text="Back"
-                    android:enabled="false"/>
+                    android:text="@string/back"
+                    android:background="@drawable/play_button_background"
+                    android:enabled="false"
+                    android:fontFamily="sans-serif"/>
 
                 <Button
                     android:id="@+id/linked_list_play_button"
@@ -72,7 +73,7 @@
                     android:contentDescription="play"
                     android:layout_marginLeft="8dp"
                     android:layout_marginRight="8dp"
-                    android:src="@drawable/play_button_background"
+                    android:background="@drawable/play_button_background"
                     android:text="Play"
                     android:visibility="gone"/>
 
@@ -82,8 +83,9 @@
                     android:layout_height="wrap_content"
                     android:layout_toRightOf="@+id/linked_list_play_floating_button"
                     android:contentDescription="Forward"
-                    android:src="@drawable/ic_forward"
-                    android:text="Next"/>
+                    android:background="@drawable/play_button_background"
+                    android:text="Next"
+                    android:fontFamily="sans-serif"/>
             </LinearLayout>
 
         </LinearLayout>

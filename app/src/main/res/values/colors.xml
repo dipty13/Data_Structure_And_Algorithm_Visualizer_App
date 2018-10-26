@@ -10,4 +10,7 @@
     <color name="colorGradientStart">#26d0ce</color>
     <color name="colorLightBlue">#a6e1e0</color>
     <color name="colorTransparent">#FFFFFF</color>
+    <color name="colorButtonPressed">#4f62d2</color>
+    <color name="colorButtonBeforePressed">#333f80</color>
+    <color name="colorButtonDisabled">#888fb6</color>
 </resources>
