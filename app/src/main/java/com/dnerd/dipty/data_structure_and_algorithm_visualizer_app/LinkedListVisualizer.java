@@ -26,6 +26,19 @@ public class LinkedListVisualizer extends AppCompatActivity {
             R.drawable.code10,
             R.drawable.code11,
     };
+    private int[] mVisualizerPic = new int[]{
+            R.drawable.linked_list1,
+            R.drawable.linked_list2,
+            R.drawable.linked_list3,
+            R.drawable.linked_list4,
+            R.drawable.linked_list5,
+            R.drawable.linked_list6,
+            R.drawable.linked_list7,
+            R.drawable.linked_list8,
+            R.drawable.linked_list9,
+            R.drawable.linked_list10,
+            R.drawable.linked_list11,
+    };
     private int index = -1;
     private int flag = 0;
     private Button mPlayButton;
@@ -57,7 +70,7 @@ public class LinkedListVisualizer extends AppCompatActivity {
         {
             mBackButton.setEnabled(false);
         }
-        if(index >= 10)
+        if(index >= 9)
         {
             mBackButton.setEnabled(false);
         }
@@ -68,8 +81,12 @@ public class LinkedListVisualizer extends AppCompatActivity {
                 public void onClick(View view) {
                     mBackButton.setEnabled(true);
                     index++;
+                    if(index == 10) {
+                        mNextButton.setEnabled(false);
+                    }
                     if(index <= 10) {
                         mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
+                        mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
                     }else{
                         mNextButton.setEnabled(false);
                        // mBackButton.setEnabled(true);
@@ -83,8 +100,12 @@ public class LinkedListVisualizer extends AppCompatActivity {
             public void onClick(View view) {
                 mNextButton.setEnabled(true);
                 index--;
+                if(index == 0) {
+                    mBackButton.setEnabled(false);
+                }
                 if(index >= 0) {
                     mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
+                    mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
                 }else {
                     mBackButton.setEnabled(false);
 

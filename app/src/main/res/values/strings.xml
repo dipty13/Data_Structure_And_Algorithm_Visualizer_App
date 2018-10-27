@@ -6,4 +6,5 @@
     <string name="algorithm_visualizer">Algorithm Visualizer</string>
     <string name="linked_list">Linked List</string>
     <string name="back">Back</string>
+    <string name="next">Next</string>
 </resources>
