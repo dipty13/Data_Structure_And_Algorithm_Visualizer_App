@@ -25,6 +25,22 @@ public class LinkedListVisualizer extends AppCompatActivity {
             R.drawable.code9,
             R.drawable.code10,
             R.drawable.code11,
+            R.drawable.code12,
+            R.drawable.code12i,
+            R.drawable.code13,
+            R.drawable.code14,
+            R.drawable.code15,
+            R.drawable.code16,
+            R.drawable.code17,
+            R.drawable.code18,
+            R.drawable.code19,
+            R.drawable.code20,
+            R.drawable.code21,
+            R.drawable.code22,
+            R.drawable.code23,
+            R.drawable.code24,
+            R.drawable.code25,
+            R.drawable.code26
     };
     private int[] mVisualizerPic = new int[]{
             R.drawable.linked_list1,
@@ -38,8 +54,24 @@ public class LinkedListVisualizer extends AppCompatActivity {
             R.drawable.linked_list9,
             R.drawable.linked_list10,
             R.drawable.linked_list11,
+            R.drawable.linked_list12,
+            R.drawable.linked_list12i,
+            R.drawable.linked_list13,
+            R.drawable.linked_list14,
+            R.drawable.linked_list15,
+            R.drawable.linked_list16,
+            R.drawable.linked_list17,
+            R.drawable.linked_list18,
+            R.drawable.linked_list19,
+            R.drawable.linked_list20,
+            R.drawable.linked_list21,
+            R.drawable.linked_list22,
+            R.drawable.linked_list23,
+            R.drawable.linked_list24,
+            R.drawable.linked_list25,
+            R.drawable.linked_list26
     };
-    private int index = -1;
+    private int index = 0;
     private int flag = 0;
     private Button mPlayButton;
     private Button mNextButton;
@@ -70,9 +102,9 @@ public class LinkedListVisualizer extends AppCompatActivity {
         {
             mBackButton.setEnabled(false);
         }
-        if(index >= 9)
+        if(index >= 26)
         {
-            mBackButton.setEnabled(false);
+            mNextButton.setEnabled(false);
         }
         
             mNextButton.setOnClickListener(new View.OnClickListener() {
@@ -81,10 +113,10 @@ public class LinkedListVisualizer extends AppCompatActivity {
                 public void onClick(View view) {
                     mBackButton.setEnabled(true);
                     index++;
-                    if(index == 10) {
+                    if(index == 26) {
                         mNextButton.setEnabled(false);
                     }
-                    if(index <= 10) {
+                    if(index <= 26) {
                         mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
                         mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
                     }else{
