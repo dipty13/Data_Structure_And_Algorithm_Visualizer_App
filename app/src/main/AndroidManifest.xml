@@ -23,7 +23,11 @@
             android:name=".Home"
             android:screenOrientation="portrait"
             android:theme="@style/HomeTheme" />
-        <activity android:name=".LinkedListVisualizer"
+        <activity
+            android:name=".LinkedListVisualizer"
+            android:screenOrientation="landscape"
+            android:theme="@style/HomeTheme" />
+        <activity android:name=".LisVisualizer"
             android:screenOrientation="landscape"
             android:theme="@style/HomeTheme"></activity>
     </application>

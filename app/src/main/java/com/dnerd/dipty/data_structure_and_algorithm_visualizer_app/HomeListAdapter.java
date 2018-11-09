@@ -10,9 +10,6 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.LinkedList;
 import java.util.List;
 
 public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHolderList> {
@@ -44,6 +41,12 @@ public class HomeListAdapter extends RecyclerView.Adapter<HomeListAdapter.ViewHo
                 if(item == "Linked List")
                 {
                     Intent intent = new Intent(mContext, LinkedListVisualizer.class);
+                    mContext.startActivity(intent);
+
+                }
+                if(item == "Longest Increasing Subsequence")
+                {
+                    Intent intent = new Intent(mContext, LisVisualizer.class);
                     mContext.startActivity(intent);
 
                 }

@@ -43,10 +43,10 @@ public class Home extends AppCompatActivity {
                 ""
         );
         HomeList listItem2 = new HomeList(
-                "Linked List",
+                "Longest Increasing Subsequence",
                 ""
         );
-        HomeList listItem3 = new HomeList(
+       /* HomeList listItem3 = new HomeList(
                 "Linked List",
                 ""
         );
@@ -82,11 +82,11 @@ public class Home extends AppCompatActivity {
                 "Linked List",
                 ""
         );
-
+*/
 
         mListItems.add(listItem1);
         mListItems.add(listItem2);
-        mListItems.add(listItem3);
+      /*  mListItems.add(listItem3);
         mListItems.add(listItem4);
         mListItems.add(listItem5);
         mListItems.add(listItem6);
@@ -94,7 +94,7 @@ public class Home extends AppCompatActivity {
         mListItems.add(listItem8);
         mListItems.add(listItem9);
         mListItems.add(listItem10);
-        mListItems.add(listItem11);
+        mListItems.add(listItem11);*/
         mAdapter = new HomeListAdapter(mListItems,this);
         mRecyclerView.setAdapter(mAdapter);
     }

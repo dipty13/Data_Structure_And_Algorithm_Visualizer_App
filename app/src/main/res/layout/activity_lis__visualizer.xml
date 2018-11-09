@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".LisVisualizer">
+    <RelativeLayout
+        android:id="@+id/lis_activity_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:background="@drawable/welcome_page_gradient_background">
+
+        <android.support.v7.widget.Toolbar
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:layout_alignParentBottom="true"
+            app:title="@string/lis_toolbar_name"
+            app:titleTextColor="@android:color/white"
+            android:textSize = "66sp"
+            android:textStyle = "bold|italic"
+            android:drawableLeft="@drawable/appicon">
+
+        </android.support.v7.widget.Toolbar>
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/lis_activity_toolbar"
+        android:orientation="horizontal">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:baselineAligned="false"
+        android:background="@android:color/white">
+        <LinearLayout
+            android:id="@+id/lis_visualizer_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:orientation="horizontal">
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom"
+            android:gravity="center_horizontal"
+            android:layout_margin="16dp">
+
+
+            <Button
+                android:id="@+id/lis_back_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:contentDescription="Back"
+                android:clickable="false"
+                android:text="@string/back"
+                android:background="@drawable/play_button_background"
+                android:enabled="false"
+                android:fontFamily="sans-serif"
+                android:drawableLeft="@drawable/ic_back"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"/>
+
+            <Button
+                android:id="@+id/lis_play_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lis_back_floating_button"
+                android:contentDescription="play"
+                android:layout_marginLeft="8dp"
+                android:layout_marginRight="8dp"
+                android:background="@drawable/play_button_background"
+                android:text="Play"
+                android:visibility="gone"/>
+
+            <Button
+                android:id="@+id/lis_next_button"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/lis_play_floating_button"
+                android:contentDescription="Forward"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/play_button_background"
+                android:text="@string/next"
+                android:textColor="@android:color/white"
+                android:textStyle="bold"
+                android:fontFamily="sans-serif"
+                android:drawableRight="@drawable/ic_forward"/>
+        </LinearLayout>
+
+    </LinearLayout>
+        <LinearLayout
+            android:id="@+id/lis_code_linear_layout"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:background="@drawable/liscode0"
+            android:orientation="horizontal">
+
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

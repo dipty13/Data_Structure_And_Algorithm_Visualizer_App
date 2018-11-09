@@ -7,4 +7,5 @@
     <string name="linked_list">Linked List</string>
     <string name="back">Back</string>
     <string name="next">Next</string>
+    <string name="lis_toolbar_name">Longest Increasing Subsequence</string>
 </resources>
