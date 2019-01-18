@@ -10,6 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class LinkedListVisualizer extends AppCompatActivity {
@@ -17,7 +18,7 @@ public class LinkedListVisualizer extends AppCompatActivity {
     private int[] mVisualizerPic;
     private int index = 0;
     private int flag = 0;
-    private Button mPlayButton;
+    private ImageView mPlayButton;
     private Button mNextButton;
     private Button mBackButton;
     private LinearLayout mCodeLayout;
@@ -36,7 +37,7 @@ public class LinkedListVisualizer extends AppCompatActivity {
 
         setContentView(R.layout.activity_linked_list_visualizer);
 
-        mPlayButton = findViewById(R.id.linked_list_play_button);
+        mPlayButton = findViewById(R.id.iv_play_button);
         mNextButton = findViewById(R.id.linked_list_next_button);
         mBackButton = findViewById(R.id.linked_list_back_button);
         mCodeLayout = findViewById(R.id.linked_list_code_linear_layout);
@@ -87,6 +88,17 @@ public class LinkedListVisualizer extends AppCompatActivity {
                 }else {
                     mBackButton.setEnabled(false);
 
+                }
+            }
+        });
+
+        mPlayButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if(mPlayButton.getDrawable().equals(R.drawable.ic_play)) {
+                    mPlayButton.setImageResource(R.drawable.ic_pause);
+                }else{
+                    mPlayButton.setImageResource(R.drawable.ic_play);
                 }
             }
         });

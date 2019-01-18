@@ -5,12 +5,12 @@
     <color name="colorPrimary">#D291BC</color>
     <color name="colorPrimaryDark">#D291BC</color>
     <color name="colorAccent">#FF4081</color>
-    <color name="colorGradientEnd">#1a2980</color>
+    <color name="colorGradientEnd">#42275a</color>
     <color name="colorGradientCenter">#dbd4b4</color>
-    <color name="colorGradientStart">#26d0ce</color>
+    <color name="colorGradientStart">#734b6d</color>
     <color name="colorLightBlue">#a6e1e0</color>
     <color name="colorTransparent">#FFFFFF</color>
-    <color name="colorButtonPressed">#4f62d2</color>
+    <color name="colorButtonPressed">#7b4d74</color>
     <color name="colorButtonBeforePressed">#333f80</color>
     <color name="colorButtonDisabled">#888fb6</color>
 </resources>

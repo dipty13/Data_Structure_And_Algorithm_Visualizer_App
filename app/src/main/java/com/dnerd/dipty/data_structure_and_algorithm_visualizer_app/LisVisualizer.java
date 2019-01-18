@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class LisVisualizer extends AppCompatActivity {
@@ -15,9 +16,9 @@ public class LisVisualizer extends AppCompatActivity {
     private int[] mVisualizerPic;
     private int index = 0;
     private int flag = 0;
-    private Button mPlayButton;
     private Button mNextButton;
     private Button mBackButton;
+    private ImageView mPlayButton;
     private LinearLayout mCodeLayout;
     private LinearLayout mVisualizerLayout;
 
@@ -32,7 +33,7 @@ public class LisVisualizer extends AppCompatActivity {
         }
         setContentView(R.layout.activity_lis__visualizer);
 
-        mPlayButton = findViewById(R.id.lis_play_button);
+        mPlayButton = findViewById(R.id.iv_play_button);
         mNextButton = findViewById(R.id.lis_next_button);
         mBackButton = findViewById(R.id.lis_back_button);
         mCodeLayout = findViewById(R.id.lis_code_linear_layout);

@@ -5,6 +5,7 @@
     <string name="main_activity_message2">Visualizing Each Line</string>
     <string name="algorithm_visualizer">Algorithm Visualizer</string>
     <string name="linked_list">Linked List</string>
+    <string name="lis">Longest Increasing Subsequence</string>
     <string name="back">Back</string>
     <string name="next">Next</string>
     <string name="lis_toolbar_name">Longest Increasing Subsequence</string>
