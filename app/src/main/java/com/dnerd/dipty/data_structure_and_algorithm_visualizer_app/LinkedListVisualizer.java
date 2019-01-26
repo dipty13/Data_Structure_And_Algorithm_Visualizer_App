@@ -2,6 +2,7 @@ package com.dnerd.dipty.data_structure_and_algorithm_visualizer_app;
 
 import android.graphics.drawable.Drawable;
 import android.os.Build;
+import android.os.Handler;
 import android.support.annotation.RequiresApi;
 import android.support.design.widget.FloatingActionButton;
 import android.support.v7.app.AppCompatActivity;
@@ -13,6 +14,8 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
+import static java.lang.Thread.sleep;
+
 public class LinkedListVisualizer extends AppCompatActivity {
     private int[] mCodePic;
     private int[] mVisualizerPic;
@@ -23,6 +26,7 @@ public class LinkedListVisualizer extends AppCompatActivity {
     private Button mBackButton;
     private LinearLayout mCodeLayout;
     private LinearLayout mVisualizerLayout;
+    private boolean mRun = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,11 +101,37 @@ public class LinkedListVisualizer extends AppCompatActivity {
             public void onClick(View view) {
                 if(mPlayButton.getDrawable().equals(R.drawable.ic_play)) {
                     mPlayButton.setImageResource(R.drawable.ic_pause);
+                    startShow();
+                    final Handler handler = new Handler();
+                    Runnable runnable = new Runnable() {
+
+                        @Override
+                        public void run() {
+                            while(mRun){
+                                mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
+                                index++;
+                                if (index > mVisualizerPic.length - 1) {
+                                    index = 0;
+                                }
+                                handler.postDelayed(this, 2000);
+                            }
+                        }
+                    };
+                    handler.postDelayed(runnable, 2000);
+
                 }else{
-                    mPlayButton.setImageResource(R.drawable.ic_play);
+                   /* stopShow();
+                    mPlayButton.setImageResource(R.drawable.ic_play);*/
                 }
             }
         });
 
+    }
+    public void startShow(){
+        mRun = true;
+    }
+
+    public void stopShow() {
+        mRun = false;
     }
 }
