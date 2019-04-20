@@ -32,8 +32,7 @@ public class LinkedListVisualizer extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT)
-        {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT) {
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_NAVIGATION);
@@ -50,83 +49,108 @@ public class LinkedListVisualizer extends AppCompatActivity {
         mCodePic = linkedListResources.getmCodePic();
         mVisualizerPic = linkedListResources.getmVisualizerPic();
 
-        if(index <= 0)
-        {
+        if (index <= 0) {
             mBackButton.setEnabled(false);
         }
-        if(index >= 48)
-        {
+        if (index >= 48) {
             mNextButton.setEnabled(false);
         }
-        
-            mNextButton.setOnClickListener(new View.OnClickListener() {
-                @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
-                @Override
-                public void onClick(View view) {
-                    mBackButton.setEnabled(true);
-                    index++;
-                    if(index == 48) {
-                        mNextButton.setEnabled(false);
-                    }
-                    if(index <= 48) {
-                        mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
-                        mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
-                    }else{
-                        mNextButton.setEnabled(false);
-                    }
 
+        mNextButton.setOnClickListener(new View.OnClickListener() {
+            @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+            @Override
+            public void onClick(View view) {
+                mBackButton.setEnabled(true);
+                mRun = false;
+                index++;
+                if (index == 48) {
+                    mNextButton.setEnabled(false);
                 }
-            });
+                if (index <= 48) {
+                    mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
+                    mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
+                } else {
+                    mNextButton.setEnabled(false);
+                }
+
+            }
+        });
         mBackButton.setOnClickListener(new View.OnClickListener() {
             @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
             @Override
             public void onClick(View view) {
                 mNextButton.setEnabled(true);
+                mRun = false;
                 index--;
-                if(index == 0) {
+                if (index == 0) {
                     mBackButton.setEnabled(false);
                 }
-                if(index >= 0) {
+                if (index >= 0) {
                     mCodeLayout.setBackground(getResources().getDrawable(mCodePic[index]));
                     mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
-                }else {
+                } else {
                     mBackButton.setEnabled(false);
 
                 }
             }
         });
 
+        /*final Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                mVisualizerLayout.setBackground(getResources()
+                        .getDrawable(mVisualizerPic[index]));
+                index++;
+                if (index > mVisualizerPic.length - 1) {
+                    index = 0;
+                }
+            }
+        }, 2000);*/
+
         mPlayButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(mPlayButton.getDrawable().equals(R.drawable.ic_play)) {
+                if (!mRun) {
                     mPlayButton.setImageResource(R.drawable.ic_pause);
                     startShow();
-                    final Handler handler = new Handler();
-                    Runnable runnable = new Runnable() {
+                    runThread();
 
-                        @Override
-                        public void run() {
-                            while(mRun){
-                                mVisualizerLayout.setBackground(getResources().getDrawable(mVisualizerPic[index]));
-                                index++;
-                                if (index > mVisualizerPic.length - 1) {
-                                    index = 0;
-                                }
-                                handler.postDelayed(this, 2000);
-                            }
-                        }
-                    };
-                    handler.postDelayed(runnable, 2000);
-
-                }else{
-                   /* stopShow();
-                    mPlayButton.setImageResource(R.drawable.ic_play);*/
+                } else {
+                    stopShow();
+                    mPlayButton.setImageResource(R.drawable.ic_play);
+                    runThread();
                 }
             }
         });
 
     }
+
+    private void runThread() {
+        final Handler handler = new Handler();
+        final Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                while(mRun){
+                    mVisualizerLayout.setBackgroundResource(mVisualizerPic[index]);
+                    mCodeLayout.setBackgroundResource(mCodePic[index]);
+                    index++;
+                    if(index > 0){
+                        mBackButton.setEnabled(true);
+                    }
+                    if (index > mVisualizerPic.length - 1) {
+                        mNextButton.setEnabled(false);
+                        mPlayButton.setImageResource(R.drawable.ic_play);
+                        mRun = false;
+                        index = 0;
+                    }
+                   handler.postDelayed(this, 1000);
+                }
+            }
+        };
+        handler.postDelayed(runnable, 1000);
+    }
+
     public void startShow(){
         mRun = true;
     }
